@@ -27,4 +27,8 @@ QUnit.test("tab selecting functionality", function(){
     equal(wizard.step(), 0, "Went to the next tab?");
   });     
   
+  F("#second").click(function(){
+    ok(!F("#back").hasClass("disabled"), "Is button active?");
+  });       
+  
 });
