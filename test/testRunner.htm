@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Test Runner</title>
+  <link rel="stylesheet" href="../src/vendor/qunit-1.14.0.css">
+  <link rel="stylesheet" href="../src/vendor/bootstrap.css">  
+</head>
+<body>
+  
+  
+<!-- Nav tabs -->
+<ul id ="omg" class="nav nav-tabs" role="tablist">
+  <li class="active"><a href="#home" role="tab" data-toggle="tab" id="first">Home</a></li>
+  <li><a href="#profile" role="tab" data-toggle="tab">Profile</a></li>
+  <li><a href="#messages" role="tab" data-toggle="tab">Messages</a></li>
+  <li><a href="#settings" role="tab" data-toggle="tab" id="last">Settings</a></li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="home">First</div>
+  <div class="tab-pane" id="profile">Second</div>
+  <div class="tab-pane" id="messages">Third</div>
+  <div class="tab-pane" id="settings">Fourth</div>
+</div>  
+  
+  <div id="qunit"></div>
+  <div id="qunit-fixture"></div>
+  <script src="../src/vendor/jquery-2.1.1.js"></script>    
+  <script src="../src/vendor/bootstrap.js"></script>    
+  <script src="../src/vendor/qunit-1.14.0.js"></script>
+  <script src="../src/vendor/funcunit.js"></script>  
+  <script src="../src/wizard.js"></script>
+  <script src="test.js"></script>
+</body>
+</html>
