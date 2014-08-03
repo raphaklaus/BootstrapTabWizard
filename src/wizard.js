@@ -40,24 +40,39 @@
     
     lastTab: function(){
       return $("#" + wizardId + " > li").last().text();
-    }
+    },
     
+    goNext: function(){
+      $("#" + wizardId + " > li.active").next().children().click();
+      $("#back").removeClass("disabled");
+
+      if (wizard.nextTab() == "")
+        $(this).addClass("disabled");      
+    },
+    
+    goBack: function(){
+      $("#" + wizardId + " > li.active").prev().children().click();
+      $("#next").removeClass("disabled");
+      if (wizard.priorTab() == "")
+        $(this).addClass("disabled");      
+    }
   };
   
   $("#next").on("click",function(){
-    $("#" + wizardId + " > li.active").next().children().click();
-    $("#back").removeClass("disabled");
-    
-    if (wizard.nextTab() == "")
-      $(this).addClass("disabled");
+    wizard.goNext();
   });  
   
   $("#back").on("click",function(){
-    $("#" + wizardId + " > li.active").prev().children().click();
-    $("#next").removeClass("disabled");
-    if (wizard.priorTab() == "")
-      $(this).addClass("disabled");
-  });    
+    wizard.goBack();
+  });   
+  
+  $("[role=tab]").on("click", function(){
+    if (wizard.step() > 0)
+      $("#back").removeClass("disabled");      
+    else
+      $("#back").addClass("disabled");
+      
+  });
   
  window.wizard = wizard;
 })();
